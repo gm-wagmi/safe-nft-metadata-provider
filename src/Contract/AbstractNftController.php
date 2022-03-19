@@ -38,6 +38,9 @@ abstract class AbstractNftController extends AbstractController
         $firstIndex = $this->getParameter('app.collection_first_index');
         $lastMintedIndex = $firstIndex + $this->cachedTotalSupplyProvider->getTotalSupply() - 1;
 
+        print "FIRST INDEX $firstIndex"
+        print "LAST INDEX $lastMintedIndex"
+
         return $isRevealed && $tokenId >= $firstIndex && $tokenId <= $lastMintedIndex;
     }
 
